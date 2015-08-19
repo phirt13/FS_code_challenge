@@ -7,7 +7,7 @@ fs.exists("./index.html", function(file) {
   if (file) {
   console.log("That file path exists.");
   } else {
-  console.log("That file path does not exist. Your an idiot")
+  console.log("That file path does not exist. Your an idiot");
   }
 });
 
