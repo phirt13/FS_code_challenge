@@ -1,0 +1,14 @@
+/*----- Footer Module -----*/
+.icon-github {
+  color: $creamy-white;
+  font-size: $default-em * 2;
+  display: block;
+  margin: 0 auto;
+  transition: color .2s linear;
+  &:visited {
+    color: #fff;
+  }
+  &:hover {
+    color: $gold;
+  }
+}

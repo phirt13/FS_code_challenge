@@ -9,35 +9,51 @@
 
 <!-- CSS
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/layout.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/state.css">
+    <link rel="stylesheet" href="css/application.css">
   </head>
 
 <!-- CONTENT
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <body>
 
-    <header role="banner">
-      <h1>Mongo Todo</h1>
+    <header class="page-header" role="banner">
+      <h1>Employee Roll Call</h1>
     </header>
 
     <main role="main">
-      <section role="Employee List">
-        <ul id="employees">
-        </ul>
+      <section class="employee-list" role="employee-list">
+        <section class="employee-list-cards"
+          <ul id="employees">
+          </ul>
+        </section>
       </section>
-      <section role="Developer Awesomeness">
-        <h3>Current Awesomness Level: <p id="awesome-index"></p></h3>
-        <button id="show-dev-rating">Show</button>
+      <section class="dashboard" role="Developer Awesomeness">
+        <section class="dashboard-widget">
+          <h3>New Employee</h3>
+          <form>
+            <label for="employee-name">Name</label>
+            <input class="text-input" type="text" id="employee-name" placeholder="name" required>
+            <label for="employee-position">Position</label>
+            <input class="text-input" type="text" id="employee-position" placeholder="position" required>
+            <p class="form">Developer</p>
+            <label for="yes-radio">Yes</label>
+            <input class="radio-input" type="radio" id="yes-radio">
+            <label class="multiple" for="no-radio">No</label>
+            <input class="radio-input" type="radio" id="no-radio">
+            <label class="dev-label" for="awesomness-level">Awesome Index</label>
+            <input class="number-input" type="number" id="awesomness-level">
+          </form>
+        </section>
+        <section class="dashboard-widget">
+          <h3>Dev Awesomness Rating</h3>
+          <p class="dev-index" id="awesome-index"></p>
+          <button id="show-dev-rating">Show</button>
+        </section>
       </section>
-
-      <button id="run-test">Test</button>
-
     </main>
-
+    <button id="run-test">Test</button>
     <footer role="contentinfo">
+      <a href="https://github.com/davschne/friending-library"><p><span class="icon-github"></span></p></a>
     </footer>
 
   </body>
