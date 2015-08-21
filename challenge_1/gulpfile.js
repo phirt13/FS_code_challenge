@@ -8,7 +8,7 @@ gulp.task('sass', function() {
 
   gulp.src('./sass/**/*.scss')
     .pipe(sass.sync().on('error', sass.logError))
-    // .pipe(minifyCSS({compaibility: 'ie8'}))
+    .pipe(minifyCSS({compaibility: 'ie8'}))
     .pipe(gulp.dest('./css'));
 });
 
