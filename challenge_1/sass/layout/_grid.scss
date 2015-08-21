@@ -1,0 +1,101 @@
+// Mixins, not worth having its own file.
+// Border box
+// Should probably use auto-prefix on this.
+@mixin box-sizing($type) {
+  -webkit-box-sizing: $type;
+     -moz-box-sizing: $type;
+          box-sizing: $type;
+}
+
+// Start the grid.
+// Optional hard reset
+* {
+    margin: 0;
+    padding: 0;
+    @include box-sizing(border-box);
+}
+
+// clearfix
+.frame {
+    margin: 0 auto;
+    max-width: $frame-width;
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+// Attribute selector
+// Also I've removed :last-of-type
+[class*='grid-'] {
+    float: left;
+    padding: $grid-padding;
+}
+
+// Create grid widths (1-12)
+@for $i from $start through $end {
+    .grid-#{$i} {
+        width: $full / $i;
+    }
+}
+
+// Common widths
+// Please use the media queries below to respond these widths
+// Feel free to pull request new widths
+@each $i in $common {
+    .grid-#{$i} {
+        width: percentage($i / 100);
+    }
+}
+
+
+// Responsiveness
+// Feel free to use your own responsive widths and styles for the grid
+// These are mostly for example use only.
+// -------------------------------------------------------------------
+
+// Mobile
+@media (max-width: $small) {
+    @for $i from $start through $end {
+        .grid-#{$i} {
+            width: $full
+        }
+    }
+}
+
+// Portrait Tablet
+@media (min-width: $small) and (max-width: $medium) {
+    .grid-4,
+    .grid-6,
+    .grid-8,
+    .grid-10,
+    .grid-12 {
+        width: $half;
+    }
+
+    .grid-1,
+    .grid-2,
+    .grid-3,
+    .grid-5,
+    .grid-7,
+    .grid-9,
+    .grid-11 {
+        width: $full;
+    }
+}
+
+// Landscape Tablet
+@media (min-width: $medium) and (max-width: $large) {
+    .grid-2,
+    .grid-7 {
+        width: $full;
+    }
+
+    .grid-4,
+    .grid-8,
+    .grid-10,
+    .grid-12 {
+        width: $half;
+    }
+}

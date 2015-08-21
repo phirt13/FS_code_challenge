@@ -1,0 +1,46 @@
+html {
+  background-color: $slate-gray;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 200;
+  font-size: $default-em;
+  letter-spacing: .05em;
+  color: $creamy-white;
+  background-color: $hb-graphite-gray;
+}
+
+p {
+  font-weight: 300;
+  letter-spacing: .05em;
+}
+
+em {
+  font-weight: 600;
+  letter-spacing: .05em;
+}
+
+button {
+  font-size: $default-em;
+  color: $tan;
+  background-color: transparent;
+  border: .1em solid $tan;
+}
+
+footer {
+  background-color: $fourB-graphite-gray;
+
+  a {
+    text-decoration: none;
+  }
+
+  p {
+    text-align: center;
+    font-size: $default-em * 2;
+  }
+}
+
+.hidden {
+  display: none;
+}

@@ -5,24 +5,24 @@
   var employees = [
     {
       name: 'Trinity',
-      occupation: 'programmer',
+      occupation: 'Programmer',
       awesomeIndex: 10
     },
 
     {
     name: 'Mater',
-    occupation: 'tow truck'
+    occupation: 'Tow Truck'
     },
 
     {
     name: 'Number 5',
-    occupation: 'programmer',
+    occupation: 'Programmer',
     awesomeIndex: 7
     },
 
     {
     name: 'Alice',
-    occupation: 'programmer',
+    occupation: 'Programmer',
     awesomeIndex: 9
     },
 
@@ -33,7 +33,7 @@
 
     {
     name: 'Bob Parr',
-    occupation: 'programmer',
+    occupation: 'Programmer',
     awesomeIndex: 6
     }
   ];
@@ -57,14 +57,14 @@
       var employeeCard = document.createElement('li');
 
       if(employees[i].occupation.toLowerCase() === 'programmer') {
-        employeeCard.setAttribute('class', 'dev');
+        employeeCard.setAttribute('class', 'employee-list-card dev');
         employeeCard.innerHTML = '<p><em>Name:</em> ' + employees[i].name + '</p>' +
                                  '<p><em>Occupation:</em> ' + employees[i].occupation + '</p>' +
-                                 '<p><em class="dev-index">Awesome Index:</em> ' + employees[i].awesomeIndex + '</p>';
+                                 '<p class="dev-index hidden"><em>Awesome Index:</em> ' + employees[i].awesomeIndex + '</p>';
       } else {
-        employeeCard.setAttribute('class', 'regular');
+        employeeCard.setAttribute('class', 'employee-list-card');
         employeeCard.innerHTML = '<p><em>Name:</em> ' + employees[i].name + '</p>' +
-                                 '<p><em class"dev-index">Occupation:</em> ' + employees[i].occupation + '</p>';
+                                 '<p><em>Occupation:</em> ' + employees[i].occupation + '</p>';
       }
 
       employeeList.appendChild(employeeCard);
@@ -84,11 +84,21 @@
   function showMeTheMoneyStat() {
 
     var awesomeIndex = document.getElementById('awesome-index');
+    var devIndex = document.getElementsByClassName('dev-index hidden');
+
+    console.log(devIndex)
+
+    for(var i = devIndex.length - 1; i >= 0; i--) {
+      devIndex[i].setAttribute('class', 'dev-index');
+    }
+    //reverse for loop needed because document.getElementsByClassName returns a HTMLCollection
+    //setting class attributes of grabbed items will result in an invalid collection
 
     if(avgDevAwesomeness > 0) {
-      awesomeIndex.innerHTML = avgDevAwesomeness;
+      awesomeIndex.innerHTML = '<em class="dev-rating">' + avgDevAwesomeness + '</em>/10';
     } else {
-      awesomeIndex.innerHTML = "SUCKS TO SUCK";
+      awesomeIndex.innerHTML = '<em class="dev-rating">' + avgDevAwesomeness + '</em>/10' +
+                               '<p class="dev-index">SUCKS TO SUCK...</p>';
     }
   }
 
@@ -98,7 +108,7 @@
 
     console.log('Clicked Show');
 
-    rollCall();
+
     showMeTheMoneyStat();
 
     e.preventDefault();
@@ -110,7 +120,7 @@
 
     console.log('Clicked Test');
 
-    employees.push({name: 'Bobby May', occupation: 'Programmer', awesomeIndex: 3});
+    employees.push({name: 'Bobby May', occupation: 'Programmer', awesomeIndex: -700});
 
     rollCall();
 

@@ -1,0 +1,23 @@
+.dashboard-widget {
+  border: .1em solid $h-graphite-gray;
+
+  .dev-index {
+    text-align: center;
+  }
+
+  button {
+    color: $gold;
+    border: .1em solid $gold;
+    transition: background-color .2s linear, color .2s linear, border .2s linear;
+    &:hover {
+      cursor: pointer;
+      color: $creamy-white;
+      border: .1em, solid $gold;
+      background-color: $gold;
+    }
+  }
+}
+
+.dev-rating {
+  font-size: $default-em * 2.5;
+}

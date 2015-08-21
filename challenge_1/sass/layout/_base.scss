@@ -1,0 +1,21 @@
+body {
+  margin: 0 auto;
+  width: 90%;
+  max-width: $default-em * 62.50;
+}
+
+main {
+  overflow: hidden;
+}
+
+p {
+  margin-top: $default-em / 2;
+}
+
+button {
+  padding: $default-em * .5;
+}
+
+footer {
+  padding: $default-em * 2;
+}

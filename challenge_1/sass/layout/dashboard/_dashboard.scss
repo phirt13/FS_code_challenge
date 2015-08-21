@@ -1,0 +1,49 @@
+.dashboard {
+  float: left;
+  width: 50%;
+  padding: $default-em $default-em $default-em * 2 $default-em;
+}
+
+.dashboard-widget {
+  display: block;
+  width: 80%;
+  margin: $default-em auto 0 auto;
+  padding: $default-em * 2;
+
+  h3 {
+    font-size: $default-em * 1.5;
+    font-weight: 500;
+  }
+
+  .dev-index {
+    margin: $default-em * 1.5 0;
+  }
+
+  button {
+    display: block;
+    margin: 0 auto;
+  }
+
+  .text-input {
+    display: block;
+    width: 100%;
+  }
+
+  .radio-input {
+    display: inline-block;
+  }
+
+  .multiple {
+    margin-left: $default-em;
+  }
+
+  .dev-label {
+    display: block;
+  }
+
+  .number-input {
+    display: block;
+  }
+}
+
+

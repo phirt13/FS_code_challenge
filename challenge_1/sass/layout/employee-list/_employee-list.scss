@@ -1,0 +1,19 @@
+.employee-list {
+  float: left;
+  width: 50%;
+  margin: $default-em 0 $default-em * 2 0;
+}
+
+.employee-list-cards {
+  padding: 0 $default-em;
+}
+.employee-list-card {
+  display: block;
+  width: 80%;
+  margin: $default-em auto 0 auto;
+  padding: $default-em * 2;
+}
+
+.dev-index {
+  color: $gold;
+}
