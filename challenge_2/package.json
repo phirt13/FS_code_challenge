@@ -1,0 +1,12 @@
+{
+  "name": "challenge_2",
+  "version": "1.0.0",
+  "description": "It is a basic HTTP server built in Node.js.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
