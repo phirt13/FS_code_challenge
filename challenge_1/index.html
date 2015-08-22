@@ -30,7 +30,7 @@
       <section class="dashboard" role="Developer Awesomeness">
         <section class="dashboard-widget">
           <h3>New Employee</h3>
-          <form>
+          <form id="create-new-employee">
             <label for="employee-name">Name</label>
             <input class="text-input" type="text" id="employee-name" placeholder="name" required>
             <label for="employee-position">Position</label>
@@ -42,12 +42,13 @@
             <input class="radio-input" type="radio" id="no-radio">
             <label class="dev-label" for="awesomness-level">Awesome Index</label>
             <input class="number-input" type="number" id="awesomness-level">
+            <button type="submit" id="employee-submit">Submit</button>
           </form>
         </section>
         <section class="dashboard-widget">
           <h3>Dev Awesomness Rating</h3>
           <p class="dev-index" id="awesome-index"></p>
-          <button id="show-dev-rating">Show</button>
+          <button class="index-widget-button" id="show-dev-rating">Show</button>
         </section>
       </section>
     </main>

@@ -49,7 +49,7 @@
     var devIndex = 0;
 
     for(var i = 0; i < employees.length; i++) {
-      if(employees[i].awesomeIndex) {
+      if(employees[i].awesomeIndex >= 0) {
         developers += 1;
         devIndex += employees[i].awesomeIndex;
       }
@@ -86,7 +86,7 @@
     var awesomeIndex = document.getElementById('awesome-index');
     var devIndex = document.getElementsByClassName('dev-index hidden');
 
-    console.log(devIndex)
+    console.log(devIndex);
 
     for(var i = devIndex.length - 1; i >= 0; i--) {
       devIndex[i].setAttribute('class', 'dev-index');
@@ -108,10 +108,46 @@
 
     console.log('Clicked Show');
 
-
     showMeTheMoneyStat();
 
     e.preventDefault();
+  });
+
+  var addNewEmployee = document.getElementById('create-new-employee');
+
+  addNewEmployee.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    var employeeName = document.getElementById('employee-name');
+    var employeePosition = document.getElementById('employee-position');
+    var employeeAwesomeIndex = document.getElementById('awesomness-level');
+    var number = parseFloat(employeeAwesomeIndex.value);
+    var noRadioButton = document.getElementById('no-radio');
+    var yesRadioButton = document.getElementById('yes-radio');
+
+    console.log(employeeName.value);
+    console.log(employeeName.value.length);
+    console.log(typeof(employeeName.value));
+    console.log(typeof(employeeAwesomeIndex.value));
+    console.log(number);
+    console.log(typeof(number));
+
+    // if(employeeName.value && employeePosition.value) {
+    //   employees.push(
+    //     {
+    //       name: employeeName.value,
+    //       occupation: employeePosition.value
+    //     });
+    // } else {
+      employees.push(
+        {
+          name: employeeName.value,
+          occupation: employeePosition.value,
+          awesomeIndex: parseFloat(employeeAwesomeIndex.value)
+        });
+
+
+    rollCall();
   });
 
   var testAdd = document.getElementById('run-test');
@@ -126,5 +162,5 @@
 
     e.preventDefault();
   });
-}())
+}());
 
