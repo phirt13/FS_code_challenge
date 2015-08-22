@@ -5,16 +5,17 @@
     text-align: center;
   }
 
-  button {
-    color: $gold;
-    border: .1em solid $gold;
-    transition: background-color .2s linear, color .2s linear, border .2s linear;
-    &:hover {
-      cursor: pointer;
-      color: $creamy-white;
-      border: .1em, solid $gold;
-      background-color: $gold;
-    }
+}
+
+.index-widget-button {
+  color: $gold;
+  border: .1em solid $gold;
+  transition: background-color .2s linear, color .2s linear, border .2s linear;
+  &:hover {
+    cursor: pointer;
+    color: $creamy-white;
+    border: .1em, solid $gold;
+    background-color: $gold;
   }
 }
 
