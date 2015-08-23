@@ -30,25 +30,27 @@
       <section class="dashboard" role="Developer Awesomeness">
         <section class="dashboard-widget">
           <h3>New Employee</h3>
-          <form id="create-new-employee">
+          <form id="create-new-employee" name="create-employee-form">
             <label for="employee-name">Name</label>
-            <input class="text-input" type="text" id="employee-name" placeholder="name" required>
+            <input class="text-input" type="text" id="employee-name" value='' placeholder="name" required>
             <label for="employee-position">Position</label>
-            <input class="text-input" type="text" id="employee-position" placeholder="position" required>
+            <input class="text-input" type="text" id="employee-position" value='' placeholder="position" required>
             <p class="form">Developer</p>
-            <label for="yes-radio">Yes</label>
-            <input class="radio-input" type="radio" id="yes-radio">
-            <label class="multiple" for="no-radio">No</label>
-            <input class="radio-input" type="radio" id="no-radio">
-            <label class="dev-label" for="awesomness-level">Awesome Index</label>
-            <input class="number-input" type="number" id="awesomness-level">
+            <label class="radio-label" for="yes-radio">Yes</label>
+            <input class="radio-input" type="radio" id="yes-radio" val="yes" name="yes-no-radio">
+            <label class="radio-label multiple" for="no-radio">No</label>
+            <input class="radio-input-active" type="radio" id="no-radio" val="no" name="yes-no-radio" checked="true">
+            <section class="dev-awesome-index hidden" id="dev-index-form">
+              <label class="dev-label" for="awesomness-level">Awesome Index</label>
+              <input class="awesome-index-input" type="number" id="awesomness-level" placeholder="0-10" min="0" max="10">
+            </section>
             <button type="submit" id="employee-submit">Submit</button>
           </form>
         </section>
         <section class="dashboard-widget">
           <h3>Dev Awesomness Rating</h3>
           <p class="dev-index" id="awesome-index"></p>
-          <button class="index-widget-button" id="show-dev-rating">Show</button>
+          <button class="index-widget-button" id="show-dev-rating">Calculate</button>
         </section>
       </section>
     </main>

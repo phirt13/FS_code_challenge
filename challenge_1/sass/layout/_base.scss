@@ -13,7 +13,13 @@ p {
 }
 
 button {
+  display: block;
   padding: $default-em * .5;
+}
+
+input {
+  box-sizing: border-box;
+  padding: .5em;
 }
 
 footer {
