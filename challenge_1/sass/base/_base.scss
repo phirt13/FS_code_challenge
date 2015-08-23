@@ -23,9 +23,37 @@ em {
 
 button {
   font-size: $default-em;
-  color: $tan;
+  color: $texas-sky-blue;
   background-color: transparent;
-  border: .1em solid $tan;
+  border: .1em solid $texas-sky-blue;
+}
+
+input {
+  background-color: $creamy-white;
+  border: .1em solid $creamy-white;
+  color: $slate-gray;
+  &:focus {
+    outline:none;
+    background-color: $creamy-white;
+    border: .2em solid $texas-sky-blue;
+    color: $slate-gray;
+  }
+}
+
+input[type='radio'] {
+  -webkit-appearance: none;
+  height: $default-em * 1.25;
+  width: $default-em * 1.25;
+  border: .2em double white;
+  border-radius: 50%;
+  transition: background-color .2s linear;
+  &:hover {
+    cursor: pointer;
+    background-color: $texas-sky-blue;
+  }
+  &:focus {
+    outline: none;
+  }
 }
 
 footer {

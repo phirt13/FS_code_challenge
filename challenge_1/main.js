@@ -49,7 +49,7 @@
     var devIndex = 0;
 
     for(var i = 0; i < employees.length; i++) {
-      if(employees[i].awesomeIndex >= 0) {
+      if(employees[i].awesomeIndex >= 0 && employees[i].awesomeIndex <= 10 || employees[i].awesomeIndex) {
         developers += 1;
         devIndex += employees[i].awesomeIndex;
       }
@@ -71,7 +71,7 @@
     }
 
     (function avgDevIndex() {
-      return avgDevAwesomeness = Math.floor(devIndex / developers);
+      return avgDevAwesomeness = (devIndex / developers);
     }());
 
     console.log(developers);
@@ -81,10 +81,14 @@
 
   rollCall();
 
-  function showMeTheMoneyStat() {
+  //Dashoard Widgets
 
-    var awesomeIndex = document.getElementById('awesome-index');
-    var devIndex = document.getElementsByClassName('dev-index hidden');
+  //Awesome Index------------------------->>
+
+  var awesomeIndex = document.getElementById('awesome-index');
+  var devIndex = document.getElementsByClassName('dev-index hidden');
+
+  function showMeTheMoneyStat() {
 
     console.log(devIndex);
 
@@ -113,46 +117,65 @@
     e.preventDefault();
   });
 
-  var addNewEmployee = document.getElementById('create-new-employee');
+  //Add New Employee Form------------------------->>
+
+  var addNewEmployee = document.getElementById('create-new-employee'); //Employee Add Form
+  var employeeName = document.getElementById('employee-name');
+  var employeePosition = document.getElementById('employee-position');
+  var noRadioButton = document.getElementById('no-radio');
+  var yesRadioButton = document.getElementById('yes-radio');
+  var employeeDevForm = document.getElementById('dev-index-form');
+  var employeeAwesomeIndex = document.getElementById('awesomness-level');
+
+  yesRadioButton.addEventListener('click', function(e) {
+    noRadioButton.setAttribute('class', 'radio-input');
+    yesRadioButton.setAttribute('class', 'radio-input-active');
+    employeeDevForm.setAttribute('class', 'dev-awesome-index');
+    employeePosition.value = 'Programmer';
+    employeeAwesomeIndex.setAttribute('required', true);
+  });
+
+  noRadioButton.addEventListener('click', function(e) {
+    noRadioButton.setAttribute('class', 'radio-input-active');
+    yesRadioButton.setAttribute('class', 'radio-input');
+    employeeDevForm.setAttribute('class', 'dev-awesome-index hidden');
+    employeePosition.value = '';
+    employeeAwesomeIndex.removeAttribute('required');
+  });
 
   addNewEmployee.addEventListener('submit', function(e) {
     e.preventDefault();
-
-    var employeeName = document.getElementById('employee-name');
-    var employeePosition = document.getElementById('employee-position');
-    var employeeAwesomeIndex = document.getElementById('awesomness-level');
-    var number = parseFloat(employeeAwesomeIndex.value);
-    var noRadioButton = document.getElementById('no-radio');
-    var yesRadioButton = document.getElementById('yes-radio');
 
     console.log(employeeName.value);
     console.log(employeeName.value.length);
     console.log(typeof(employeeName.value));
     console.log(typeof(employeeAwesomeIndex.value));
-    console.log(number);
-    console.log(typeof(number));
 
-    // if(employeeName.value && employeePosition.value) {
-    //   employees.push(
-    //     {
-    //       name: employeeName.value,
-    //       occupation: employeePosition.value
-    //     });
-    // } else {
+    if(noRadioButton.checked) {
+      console.log('Ran REGULAR employee add')
+      employees.push(
+        {
+          name: employeeName.value,
+          occupation: employeePosition.value
+        });
+    } else if(yesRadioButton.checked) {
+      console.log('Ran DEV employee add')
       employees.push(
         {
           name: employeeName.value,
           occupation: employeePosition.value,
           awesomeIndex: parseFloat(employeeAwesomeIndex.value)
         });
-
+    } else {
+      console.log("error");
+    }
 
     rollCall();
   });
 
-  var testAdd = document.getElementById('run-test');
+  var hiddenAdd = document.getElementById('run-test');
 
-  testAdd.addEventListener('click', function(e) {
+  hiddenAdd.addEventListener('click', function(e) {
 
     console.log('Clicked Test');
 
