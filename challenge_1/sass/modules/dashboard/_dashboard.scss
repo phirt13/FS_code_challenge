@@ -1,6 +1,11 @@
 .dashboard-widget {
   border: .1em solid $h-graphite-gray;
 
+  h3 {
+    font-size: $default-em * 1.5;
+    font-weight: 500;
+  }
+
   .dev-index {
     text-align: center;
   }
@@ -19,6 +24,15 @@
   }
 }
 
+.create-new-employee-button {
+  transition: background-color .2s linear, color .2s linear, border .2s linear;
+  &:hover {
+    cursor: pointer;
+    color: $creamy-white;
+    border: .1em solid $texas-sky-blue;
+    background-color: $texas-sky-blue;
+  }
+}
 .dev-rating {
   font-size: $default-em * 2.5;
 }
@@ -40,5 +54,16 @@
   &:focus {
     outline: none;
     background-color: $texas-sky-blue;
+  }
+}
+
+.secret-button {
+  background-color: transparent;
+  color: transparent;
+  border: .1em solid transparent;
+  transition: color .2s linear, border .2s linear;
+  &:hover {
+    border: .1em solid $blood-orange;
+    color: $blood-orange;
   }
 }
