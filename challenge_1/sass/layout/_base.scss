@@ -20,6 +20,11 @@ button {
 input {
   box-sizing: border-box;
   padding: .5em;
+  margin-top: $default-em;
+}
+
+label {
+  margin-top: $default-em;
 }
 
 footer {

@@ -11,8 +11,7 @@
   padding: $default-em * 2;
 
   h3 {
-    font-size: $default-em * 1.5;
-    font-weight: 500;
+    margin-bottom: $default-em;
   }
 
   .dev-index {
@@ -22,6 +21,7 @@
   .text-input {
     display: block;
     width: 100%;
+    margin: $default-em 0;
   }
 
   .radio-input {
@@ -44,4 +44,16 @@
 .index-widget-button {
   display: block;
   margin: 0 auto;
+}
+
+.awesome-index-input {
+  min-width: 4.75em;
+}
+
+.create-new-employee-button {
+  margin-top: $default-em;
+}
+
+.secret-button {
+  position: absolute;
 }
