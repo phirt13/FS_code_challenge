@@ -26,6 +26,9 @@ button {
   color: $texas-sky-blue;
   background-color: transparent;
   border: .1em solid $texas-sky-blue;
+  &:focus {
+    outline: none;
+  }
 }
 
 input {
