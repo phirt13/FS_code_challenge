@@ -1,4 +1,4 @@
-###Challenge 3 of the FS Code Challenge problem set.
+###Challenge 1 of the FS Code Challenge problem set.
 
 It is a vanilla JS and lodash + jQuery array manipulation exercise.
 
