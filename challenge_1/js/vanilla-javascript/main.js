@@ -119,7 +119,7 @@
 
   //Add New Employee Form------------------------->>
 
-  var addNewEmployee = document.getElementById('create-new-employee'); //Employee Add Form
+  var addNewEmployee = document.getElementById('create-new-employee');
   var employeeName = document.getElementById('employee-name');
   var employeePosition = document.getElementById('employee-position');
   var noRadioButton = document.getElementById('no-radio');
@@ -151,11 +151,6 @@
     console.log(typeof(employeeName.value));
     console.log(typeof(employeeAwesomeIndex.value));
 
-    if(employeeAwesomeIndex.value > 10) {
-      console.log('Ran index change');
-      employeeAwesomeIndex.value = 10;
-    }
-
     if(noRadioButton.checked) {
       console.log('Ran REGULAR employee add')
       employees.push(
@@ -174,6 +169,10 @@
     } else {
       console.log("error");
     }
+
+    employeeName.value = '';
+    employeePosition.value = '';
+    employeeAwesomeIndex.value = '';
 
     rollCall();
   });
